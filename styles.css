@@ -1,0 +1,129 @@
+/* ===== Healthy Recipe Finder — shared styles ===== */
+:root{
+  --bg:#f7f5f3; --ink:#17362e; --text:#41584f; --line:#e8e4df; --white:#fff;
+  --peach:#fbd6c0; --orange:#f59a68; --lav:#c3c7ee; --teal:#4db39b; --panel:#eaeeeb;
+  --font:'Nunito','Segoe UI',Arial,sans-serif; --serif:'Fraunces',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:1.05rem;line-height:1.55;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{color:var(--ink);font-weight:800;line-height:1.15}
+.wrap{width:min(1190px,100% - 48px);margin-inline:auto}
+.icon{width:1em;height:1em;fill:currentColor;flex:none}
+
+/* ---------- Header ---------- */
+.header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:88px}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--ink)}
+.brand svg{width:34px;height:38px}
+.nav{display:flex;gap:40px;font-weight:600;font-size:1rem;color:var(--ink)}
+.nav a{padding:6px 0;border-bottom:2px solid transparent}
+.nav a.active{border-color:var(--orange)}
+.nav a:hover{border-color:var(--peach)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;background:var(--ink);color:var(--white);font:700 1rem var(--font);padding:14px 22px;border:0;border-radius:10px;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:#0f2620;transform:translateY(-1px)}
+.btn--pill{width:100%;border-radius:999px;text-align:center;padding:14px}
+
+/* ---------- Home: hero ---------- */
+.hero{position:relative;text-align:center;padding:84px 0 64px;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border:26px solid var(--lav);border-radius:50%;z-index:0}
+.hero::before{width:420px;height:420px;left:-380px;top:420px;border-left-color:transparent;border-bottom-color:transparent;transform:rotate(-70deg)}
+.hero::after{width:640px;height:640px;right:-520px;top:300px;border-right-color:transparent;border-bottom-color:transparent;transform:rotate(10deg)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);letter-spacing:-.02em}
+.hl{background:linear-gradient(transparent 56%,var(--peach) 56%,var(--peach) 112%);padding:0 6px}
+.hero p{max-width:580px;margin:22px auto 34px;font-size:1.1rem}
+.frame{margin:70px auto 0;max-width:1170px;background:var(--white);padding:12px;border-radius:26px}
+.frame img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 30%;border-radius:16px}
+
+/* ---------- Home: features ---------- */
+.features{padding:70px 0 80px;border-bottom:1px solid var(--line)}
+.features h2{text-align:center;font-size:2.4rem;margin-bottom:56px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.tile{width:58px;height:58px;background:var(--white);border-radius:12px;display:grid;place-items:center;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-bottom:26px}
+.tile svg{width:30px;height:30px}
+.cols h3{font-size:1.7rem;margin-bottom:10px}
+
+/* ---------- Home: split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:90px 0}
+.split h2{font-size:2.8rem;margin-bottom:28px}
+.split p+p{margin-top:18px}
+.split img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px}
+.ul{background:linear-gradient(transparent 82%,var(--orange) 82%,var(--orange) 92%,transparent 92%)}
+
+/* ---------- Home: CTA ---------- */
+.cta{position:relative;overflow:hidden;background:var(--panel);border-radius:22px;text-align:center;padding:92px 24px 84px;margin-bottom:40px}
+.cta>*{position:relative;z-index:1}
+.cta h2{font-size:2.6rem;margin-bottom:14px}
+.cta p{margin-bottom:34px}
+.cta .deco{position:absolute;z-index:0}
+.deco--fork{left:60px;top:-10px;width:230px;height:330px}
+.deco--knife{right:-10px;bottom:0;width:260px;height:260px}
+.deco--o{left:0;bottom:30px;width:140px}
+.deco--t{right:0;bottom:60px;width:170px}
+
+/* ---------- Footer ---------- */
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;height:96px;font-size:.95rem}
+.footer.line{border-top:1px solid var(--line)}
+.social{display:flex;gap:22px;color:var(--ink)}
+.social svg{width:24px;height:24px}
+
+/* ---------- Recipes page ---------- */
+.intro{text-align:center;padding:84px 0 56px}
+.intro h1{font-size:clamp(2rem,4.6vw,3rem);margin-bottom:22px}
+.intro p{max-width:740px;margin:auto;font-size:1.15rem;line-height:1.65}
+.tools{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:22px}
+.tools .left{display:flex;gap:16px;flex-wrap:wrap}
+.field,.search{background:var(--white);border:1px solid var(--line);border-radius:8px;height:46px;font:600 1rem var(--font);color:var(--ink)}
+.field{padding:0 42px 0 16px;appearance:none;cursor:pointer;
+  background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317362e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right 14px center/16px no-repeat}
+.search{display:flex;align-items:center;gap:10px;padding:0 16px;width:min(310px,100%);color:var(--text)}
+.search input{border:0;outline:0;background:none;font:inherit;width:100%;color:var(--ink)}
+.search input::placeholder{color:var(--text);font-weight:500}
+.search svg{width:20px;height:20px;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding-bottom:100px}
+.card{min-width:0;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:8px 8px 8px;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:6/5;object-fit:cover;border-radius:8px}
+.card .body{padding:18px 8px 6px;flex:1}
+.card h3{font-size:1.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:10px}
+.card .desc{font-size:.95rem;line-height:1.55;min-height:48px;margin-bottom:22px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.95rem;margin-bottom:24px}
+.meta span{display:flex;align-items:center;gap:7px}
+.meta svg{width:16px;height:16px;color:var(--ink)}
+.empty{grid-column:1/-1;text-align:center;padding:60px 0;font-size:1.2rem;color:var(--ink)}
+
+/* ---------- Recipe modal ---------- */
+dialog{border:0;border-radius:18px;padding:0;width:min(560px,92vw);margin:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(23,54,46,.55)}
+dialog img{width:100%;height:240px;object-fit:cover}
+.dlg{padding:26px 30px 30px}
+.dlg h2{font-size:1.7rem;margin-bottom:8px}
+.dlg h4{color:var(--ink);margin:18px 0 6px}
+.dlg ul{padding-left:20px}
+.dlg .btn{margin-top:24px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cols{grid-template-columns:1fr;gap:34px}
+  .split{grid-template-columns:1fr;gap:34px;padding:60px 0}
+}
+@media (max-width:680px){
+  .header .wrap{height:auto;flex-wrap:wrap;padding:14px 0}
+  .nav{order:3;width:100%;justify-content:center;gap:28px}
+  .brand{font-size:1.05rem}
+  .hero{padding-top:56px}
+  .grid{grid-template-columns:1fr}
+  .tools .left{width:100%}.field{flex:1}
+  .search{width:100%}
+  .deco--fork,.deco--knife{opacity:.5}
+  .cta h2,.split h2{font-size:2rem}
+}
+.legal{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
